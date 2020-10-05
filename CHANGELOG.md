@@ -7,42 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-- ac0e36a3f Merge pull request #599 from bareos/dev/pstorz/master/python3-documentation
-- b297102a7 Merge pull request #609 from bareos/dev/bpoed/master/localization
-- 2f25fbaa7 Merge pull request #591 from bareos/dev/fbergkemper/master/s4269-master
-- ab3a1f620 Merge pull request #606 from bareos/dev/joergs/master/tlsprotocolversion
-- 82953a7a0 Merge pull request #605 from bareos/dev/franku/master/start_stop_minio
-- 171f1b8b9 Merge pull request #596 from bareos/dev/sduehr/fix_libcloud_plugin_filename_encoding
-- e36c4c01d Merge pull request #604 from bareos/dev/joergs/master/console-cmds-fixes
-- dc3ca951b Merge pull request #603 from arogge/dev/arogge/master/dbconfig-common-noinstall
-- 8aac63192 Merge pull request #600 from bareos/dev/pstorz/master/terabyte-sizes
-- ff2fd7b32 Merge pull request #602 from bareos/dev/joergs/master/config-dump-fix
-- d90f4380f Merge pull request #595 from arogge/dev/arogge/master/TT4200674
-- 8d5c1de64 Merge pull request #588 from bareos/dev/pstorz/master/fedora-buildchain
-- ef704fb86 Merge pull request #598 from bareos/dev/pstorz/master/no-python3-on-solaris
-- bab28d097 Merge pull request #585 from bareos/dev/joergs/master/show-api2-fix
-- 8ab2ad5bb Merge pull request #594 from bareos/dev/fbergkemper/master/s4238
-- 0ac3dec24 Merge pull request #576 from MSP-Stev/0001265
-- 85e8ff3ee Merge pull request #583 from arogge/dev/arogge/master/new-config-warnings
-- 193221e82 Merge pull request #586 from bareos/dev/pstorz/master/systemtests-fix-python-detection
-- ca3fe90e0 Merge pull request #584 from arogge/dev/arogge/master/debian-build
-- 3743f10c1 Merge pull request #581 from arogge/dev/arogge/master/list-backups
-- bfd70531f Merge pull request #572 from bareos/dev/pstorz/master/python3-modules-rebase
-- 6bf4ca20d Merge pull request #582 from joergsteffens/dev/joergs/master/travis
-- de46d0b15 Merge pull request #575 from bareos/dev/franku/master/deny-tlsv1.0
-- be8a1d876 Merge pull request #574 from bareos/dev/joergs/master/show-api2
-- 867e5860c Merge pull request #561 from bareos/dev/franku/master/fix-droplet-timeout
-- 66a02b5fe Merge pull request #562 from bareos/dev/franku/master/connection-pool-fix
-- 1da9cb499 Merge pull request #578 from bareos/dev/franku/master/multiline-quoted-strings
-- c76007cfd Merge pull request #571 from bareos/dev/franku/master/mssql-vdi
-- c4ec23301 Merge pull request #570 from bareos/dev/franku/master/status-config
-- e6f679f2c Merge pull request #554 from arogge/dev/arogge/master/xattr-bug
-- d55806501 Merge pull request #551 from banuchka/xtrabackup_fix_get_last_lsn
-
 #Fixed
 
-
-
+- 2f25fbaa7 [Fixes #1039]: Can not login in webui [Pull request #591]
+- 171f1b8b9 Merge pull request #596 from bareos/dev/sduehr/fix_libcloud_plugin_filename_encoding
+- e36c4c01d Improve the behaviour of some console commands [Pull request #604]
+- d90f4380f Several improvemens to the LDAP Plugin for filedaemon [Pull request #595]
+- 8ab2ad5bb Avoid duplicate actions after submission of an action followed by a page refresh in the webui [Pull request #594]
+- 867e5860c Fix several droplet timeout problems to enable connection retries [Pull request #561]
+- 66a02b5fe Close connection pool sockets properly (client initiated connections) [Pull request #562]
+- c4ec23301 Check user ACL for status configuration [Pull request #570]
+- e6f679f2c Allow backup/restore of cephfs mounts [Pull request #554]
+- d55806501 Fix percona xtrabackup get last_lsn value [Pull request #551]
 - e749b992e Prevent director daemon crash by adding a nullptr-guard to CreateAttriburesRecord() [Pull request #566]
 - c65b6b0cb Enable testing of deprecated databases (MySQL and SQLite) [Pull request #573]
 - c59228e7b Fix hearbeat thread shutdown race condition [Pull request #565]
@@ -88,9 +64,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #Added
 
 
+- ac0e36a3f Added documentation and background information for the new python 3 plugin support [Pull request #599]
+- Added the libcloud filedaemon plugin to backup S3 buckets
+- 8aac63192 Allow terabytes, tebibytes, petabytes, pebibytes, exabytes and exbibytes unit symbols when specifying sizes [Pull request #600]
+- 85e8ff3ee Add some configuration warnings to the storagdaemon [Pull request #583]
+- bfd70531f Add python3 support for filedaemon, storagedaemon and director plugins [Pull request #572]
+- de46d0b15 Use configurable OpenSSL "Protocol" parameter [Pull request #575]
+- be8a1d876 Extend bconsole show command to support JSON output format (API 2) [Pull request #574]
+- 1da9cb499 Allow multiline quoted strings in the configuration [Pull request #578]
 - 74794e070 Print toolchain details during cmake run [Pull request #567]
-- fd13940f9 Add MySQL/SQLite deprecation notes to software [Pull request #564]
-- f3836775f Add MySQL/SQLite deprecation notes to documentation [Pull request #563]
 - 799ea9ca2 Build libdroplet as submodule and use systemtest test [Pull request #560]
 - 4c978108e Run systemtests during build, build packages from source root directory [Pull request #559]
 - 7c199b269 Add pkglists to documentation for all OS we build for [Pull request #557]
@@ -117,6 +99,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #Changed
 
+
+- b297102a7 Updated many localization files [Pull request #609]
+- 3743f10c1 Display archived jobs on list backups command [Pull request #581]
+- c76007cfd Use a configurable VDI timeout when requesting the MSSQL config [Pull request #571]
 - e4870841e Improved the formatting of job log entries in the webui [Pull request #525 from tikoflano/Add-links-to-joblogs
 - 3e12c981a Cleanup unused images [Pull request #538]
 - 8336bc8bc Use precise file names for public and private key files to make documentation clear [Pull request #537]
@@ -136,6 +122,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fdd139cf9 Improve ovirt plugin
 
 #Deprecated
+
+- fd13940f9 Add MySQL/SQLite deprecation notes to software [Pull request #564]
+- f3836775f Add MySQL/SQLite deprecation notes to documentation [Pull request #563]
+
 #Removed
 
 #Security
