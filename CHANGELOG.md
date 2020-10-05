@@ -10,7 +10,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 #Fixed
 
 - [Issue #1039]: Can not login in webui [PR #591]
-- Merge pull request #596 from bareos/dev/sduehr/fix_libcloud_plugin_filename_encoding
 - Improve the behaviour of some console commands [PR #604]
 - Several improvemens to the LDAP Plugin for filedaemon [PR #595]
 - Avoid duplicate actions after submission of an action followed by a page refresh in the webui [PR #594]
@@ -45,21 +44,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed a bug when backup a VM by using VM id [PR #415]
 - Fixed that droplet is waiting forever if flushing a file fails: [PR #468]
 - [Issue #1220]: default drive index not set to 0: [PR #472]
-- Fixed a segmentation fault caused by deprecated OpenSSL functions
-- [Issue #1211]: Bareos director and bareos fd crash when regexwhere is specified
-- Always Incremental: Address early prune problem when vol retentions are too small
-- [Issue #1206]: Form field restore job is not populated after client selection
-- [Issue #1192]: Authorization key rejected by Storage daemon since upgrading director and storage daemons
-- Allow pathlengths of a messages recource to be longer that 128 bytes
+- Fixed a segmentation fault caused by deprecated OpenSSL functions [PR #453]
+- [Issue #1211]: Bareos director and bareos fd crash when regexwhere is specified [PR #451]
+- Always Incremental: Address early prune problem when vol retentions are too small [PR #423]
+- [Issue #1206]: Form field restore job is not populated after client selection [PR #438]
+- [Issue #1192]: Authorization key rejected by Storage daemon since upgrading director and storage daemons [PR #431]
+- Allow pathlengths of a messages recource to be longer that 128 bytes [PR #433]
 - [Issue #1190]: Schedules without a client will not be run
-- Fixed a bug where hourly schedules fail on the general rule without a day
-- [Issue #1175]: bareos crashes with invalid character in ACL
-- [Issue #1184]: Using syslog or an invalid message type crashes a daemon
-- [Issue #1176]: Upgrade 18.2.5 to 19.2.5 failed while upgrading MySQL database
-- [Issue #1174]: Reversed sort order on the restore client selection
-- Fixed errors in client only build
-- Fixed checksum algorithm regarding byte order
-- Avoid a race condition in job name creation
+- Fixed a bug where hourly schedules fail on the general rule without a day [PR #422]
+- [Issue #1175]: bareos crashes with invalid character in ACL [PR #410]
+- [Issue #1184]: Using syslog or an invalid message type crashes a daemon [PR #414]
+- [Issue #1176]: Upgrade 18.2.5 to 19.2.5 failed while upgrading MySQL database [PR #409]
+- [Issue #1174]: Reversed sort order on the restore client selection [PR #411]
+- Fixed errors in client only build [PR #413]
+- Fixed checksum algorithm regarding byte order [PR #412]
+- Avoid a race condition in job name creation [PR #385]
 
 #Added
 
@@ -88,14 +87,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add logging parameters to gfapi backend [PR #455]
 - Pre-fill restore form element "replace" according to selected restore job in the webui: [PR #456]
 - Add documentation for a critical bscan limitation: [PR #460]
-- Pre-fill restore location form element according to selected restore job in webui
-- Add more logging messages to NDMP interface
-- Add start and finish time in the webui-joblist
-- Add a database ugrade test
-- Add recommendation for PHP 7 to documentation
-- Add encryption signature test
-- Add percona extra backup
-- Add test for client initiated backup
+- Pre-fill restore location form element according to selected restore job in webui [PR #454]
+- Add more logging messages to NDMP interface [PR #448]
+- Add start and finish time in the webui-joblist [PR #429]
+- Add a database ugrade test [PR #406]
+- Add recommendation for PHP 7 to documentation [PR #420]
+- Add encryption signature test [PR #404]
+- Add percona extra backup [PR #386]
+- Add test for client initiated backup [PR #383]
 
 #Changed
 
@@ -114,11 +113,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improve warnings on Maximum Block Size of the droplet backend: [PR #476]
 - Improve the selection of a specific file version restore in the webui: [PR #471]
 - Only allow configuration maximum concurrent jobs of 0 or 1 when using droplet: [PR #465]
-- and f66f14fd9 Improve filtering on webui-jobs-bootstrap-table
-- Allow systemtets to run on installed packaged
-- Allow systemtests to be run in parallel
-- Disable systemtests on non compatible systems
-- Update ovirt plugin documentation
+- and f66f14fd9 Improve filtering on webui-jobs-bootstrap-table [PR #444]
+- Allow systemtets to run on installed packaged [PR #400]
+- Allow systemtests to be run in parallel [PR #392]
+- Disable systemtests on non compatible systems [PR #387]
+- Update ovirt plugin documentation [PR #384]
 - Improve ovirt plugin
 
 #Deprecated
