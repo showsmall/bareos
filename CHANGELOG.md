@@ -7,20 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-#Fixed
+# Fixed
 
 - [Issue #1039]: Can not login in webui [PR #591]
 - Improve the behaviour of some console commands [PR #604]
-- Several improvemens to the LDAP Plugin for filedaemon [PR #595]
+- Several improvements to the LDAP Plugin for filedaemon [PR #595]
 - Avoid duplicate actions after submission of an action followed by a page refresh in the webui [PR #594]
 - Fix several droplet timeout problems to enable connection retries [PR #561]
 - Close connection pool sockets properly (client initiated connections) [PR #562]
 - Check user ACL for status configuration [PR #570]
 - Allow backup/restore of cephfs mounts [PR #554]
 - Fix percona xtrabackup get last_lsn value [PR #551]
-- Prevent director daemon crash by adding a nullptr-guard to CreateAttriburesRecord() [PR #566]
+- Prevent director daemon crash by adding a nullptr-guard to CreateAttributesRecord() [PR #566]
 - Enable testing of deprecated databases (MySQL and SQLite) [PR #573]
-- Fix hearbeat thread shutdown race condition [PR #565]
+- Fix heartbeat thread shutdown race condition [PR #565]
 - Fix build problems for several distributions [PR #569]
 - Prevent from unique key violations on .bvfs_update [PR #545]
 - Fix "make install" and add "make uninstall" when building from source [PR #556]
@@ -28,13 +28,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remove compiler warnings [PR #543]
 - python-plugins: improve statp handling in localfileset plugin [PR #530]
 - Fix some issues in the tray-monitor configuration [PR #539]
-- Avoid a memory double-free in a spool function of the storage daemin [PR #535]
+- Avoid a memory double-free in a spool function of the storage daemon [PR #535]
 - [Issue #1246]: oVirt plugin fails to restore to local disk with KeyError [PR #534]
 - Huge source code cleanup to reduce compiler warnings and increase readability [PR #479]
 - Fix bscan handling of restore object data [PR #516]
 - Adapt Python Bareos version number according to PEP-440 [PR #521]
 - Fixed JobDetails joblog messages order [PR #509]
-- Huge source code cleanup of storagedaemon Device Backend [PR #498]
+- Huge source code cleanup of storagedaemon Device backend [PR #498]
 - [Issue #1227]: Fix fadvise bug [PR #496]
 - Improve webui frontend login dialog [PR #505]
 - Improve postgres-backup filedaemon plugin [PR #502]
@@ -49,7 +49,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Always Incremental: Address early prune problem when vol retentions are too small [PR #423]
 - [Issue #1206]: Form field restore job is not populated after client selection [PR #438]
 - [Issue #1192]: Authorization key rejected by Storage daemon since upgrading director and storage daemons [PR #431]
-- Allow pathlengths of a messages recource to be longer that 128 bytes [PR #433]
+- Allow path lengths of a messages resource to be longer that 128 bytes [PR #433]
 - [Issue #1190]: Schedules without a client will not be run
 - Fixed a bug where hourly schedules fail on the general rule without a day [PR #422]
 - [Issue #1175]: bareos crashes with invalid character in ACL [PR #410]
@@ -60,13 +60,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed checksum algorithm regarding byte order [PR #412]
 - Avoid a race condition in job name creation [PR #385]
 
-#Added
+# Added
 
 
 - Added documentation and background information for the new python 3 plugin support [PR #599]
 - Added the libcloud filedaemon plugin to backup S3 buckets
 - Allow terabytes, tebibytes, petabytes, pebibytes, exabytes and exbibytes unit symbols when specifying sizes [PR #600]
-- Add some configuration warnings to the storagdaemon [PR #583]
+- Add some configuration warnings to the storagedaemon [PR #583]
 - Add python3 support for filedaemon, storagedaemon and director plugins [PR #572]
 - Use configurable OpenSSL "Protocol" parameter [PR #575]
 - Extend bconsole show command to support JSON output format (API 2) [PR #574]
@@ -90,22 +90,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Pre-fill restore location form element according to selected restore job in webui [PR #454]
 - Add more logging messages to NDMP interface [PR #448]
 - Add start and finish time in the webui-joblist [PR #429]
-- Add a database ugrade test [PR #406]
+- Add a database upgrade test [PR #406]
 - Add recommendation for PHP 7 to documentation [PR #420]
 - Add encryption signature test [PR #404]
 - Add percona extra backup [PR #386]
 - Add test for client initiated backup [PR #383]
 
-#Changed
+# Changed
 
 
 - Updated many localization files [PR #609]
 - Display archived jobs on list backups command [PR #581]
 - Use a configurable VDI timeout when requesting the MSSQL config [PR #571]
-- Improved the formatting of job log entries in the webui [PR #525 from tikoflano/Add-links-to-joblogs
+- Improved the formatting of job log entries in the webui [PR #525]
 - Cleanup unused images [PR #538]
 - Use precise file names for public and private key files to make documentation clear [PR #537]
-- Speed-up Bareos-dbcopy [PR #524]
+- Significantly speed-up bareos-dbcopy [PR #524]
 - Publish PythonBareos to PyPI.org using Github Actions [PR #514]
 - Updated documentation for tests [PR #497]
 - Display numeric values of UID and GID in addition to user and group name in webui [PR #488]
@@ -113,23 +113,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Improve warnings on Maximum Block Size of the droplet backend: [PR #476]
 - Improve the selection of a specific file version restore in the webui: [PR #471]
 - Only allow configuration maximum concurrent jobs of 0 or 1 when using droplet: [PR #465]
-- and f66f14fd9 Improve filtering on webui-jobs-bootstrap-table [PR #444]
-- Allow systemtets to run on installed packaged [PR #400]
+- Improve filtering on webui-jobs-bootstrap-table [PR #444]
+- Allow systemtests to run on installed packaged [PR #400]
 - Allow systemtests to be run in parallel [PR #392]
 - Disable systemtests on non compatible systems [PR #387]
 - Update ovirt plugin documentation [PR #384]
 - Improve ovirt plugin
 
-#Deprecated
+# Deprecated
 
 - Add MySQL/SQLite deprecation notes to software [PR #564]
 - Add MySQL/SQLite deprecation notes to documentation [PR #563]
 
-#Removed
+# Removed
 
-#Security
+# Security
 
-- Add SECURITY.d file: [PR #463]
+- Add SECURITY.md file: [PR #463]
 - Do not accept cram challenge if own hostname is used [PR #536]
 
 
