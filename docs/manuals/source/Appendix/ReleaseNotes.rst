@@ -21,6 +21,47 @@ The feature overview for a release are shown at the :ref:`genindex` of this docu
 Bareos-19.2
 -----------
 
+.. _bareos-1929-releasenotes:
+
+.. _bareos-19.2.9:
+
+Bareos-19.2.9
+~~~~~~~~~~~~~
+
+General Information
+^^^^^^^^^^^^^^^^^^^
+.. list-table:: Bareos 19.2.9 Release Information
+   :header-rows: 0
+   :widths: auto
+
+   * - **Release Date**
+     - ????-??-??
+   * - **Database Version**
+     -  2192
+   * - **URL**
+     - https://download.bareos.com/bareos/release/19.2/
+   * - **Release Ticket**
+     - :mantis:`????`
+
+Bugs Fixed
+^^^^^^^^^^
+* stored: fix memory corruption in label.cc
+* :mantis:`1039`: Can not login in webui
+* filed: allow backup/restore of cephfs mounts and add tests
+
+Other Improvements
+^^^^^^^^^^^^^^^^^^
+* core: sort jobids before purging
+* filedaemon: solve a race condition within the heartbeat thread shutdown
+* stored: always initialize struct mtop
+
+Internal Project Changes
+^^^^^^^^^^^^^^^^^^^^^^^^
+* added missing pkglists
+* several adations to fedora cross buildchain
+* improve ldap plugin for filedaemon
+
+
 .. _bareos-1928-releasenotes:
 
 .. _bareos-19.2.8:
