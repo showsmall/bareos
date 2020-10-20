@@ -18,11 +18,45 @@ The feature overview for a release are shown at the :ref:`genindex` of this docu
 
 .. _bareos-current-releasenotes:
 
-.. _bareos-1826-releasenotes:
-
-
 Bareos-18.2
 -----------
+
+.. _bareos-18210-releasenotes:
+
+.. _bareos-18.2.10:
+
+Bareos-18.2.10
+~~~~~~~~~~~~~
+
+General Information
+^^^^^^^^^^^^^^^^^^^
+
+.. list-table:: Bareos 18.2.10 Release Information
+   :header-rows: 0
+   :widths: auto
+
+   * - **Release Date**
+     - ?? ???? ????
+   * - **Database Version**
+     -  2171
+   * - **URL**
+     - https://download.bareos.com/bareos/release/18.2/
+
+   * - **Release Ticket**
+     - :mantis:`????`
+
+Security
+^^^^^^^^
+
+Bugfixes and Changes
+^^^^^^^^^^^^^^^^^^^^
+* :mantis:`1039`: Can not login in webui
+
+Internal Project Changes
+^^^^^^^^^^^^^^^^^^^^^^^^
+* added missing pkglists
+* several adations to fedora buildchain
+* improve ldap plugin for filedaemon
 
 .. _bareos-1829-releasenotes:
 
