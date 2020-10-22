@@ -321,7 +321,7 @@ set(ALL_BINARIES_BEING_USED_BY_SYSTEMTESTS
     bregex
 )
 if(TARGET bareos_vadp_dumper)
-  list(APPEND bareos_vadp_dumper)
+  list(APPEND ALL_BINARIES_BEING_USED_BY_SYSTEMTESTS bareos_vadp_dumper)
 endif()
 
 set(AVAILABLE_WEBUI_SELENIUM_TESTS
@@ -598,7 +598,8 @@ endif()
 
 if(TARGET droplet
    AND S3CMD
-   AND MINIO)
+   AND MINIO
+)
   list(APPEND SYSTEM_TESTS droplet-s3)
 else()
   list(APPEND SYSTEM_TESTS_DISABLED droplet-s3)
