@@ -1,13 +1,11 @@
-# Changelog
-
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+and since version 20.0.0 this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-# Fixed
+### Fixed
 
 - [Issue #1039]: Can not login in webui [PR #591]
 - Improve the behaviour of some console commands [PR #604]
@@ -60,7 +58,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fixed checksum algorithm regarding byte order [PR #412]
 - Avoid a race condition in job name creation [PR #385]
 
-# Added
+### Added
 
 
 - Added documentation and background information for the new python 3 plugin support [PR #599]
@@ -85,6 +83,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Write job- and file-choice to audit log on restore [PR #493]
 - Add infrastructure for configuration warnings [PR #492]
 - Add logging parameters to gfapi backend [PR #455]
+- Add a security policy (`SECURITY.md`) to the project [PR #463]
 - Pre-fill restore form element "replace" according to selected restore job in the webui: [PR #456]
 - Add documentation for a critical bscan limitation: [PR #460]
 - Pre-fill restore location form element according to selected restore job in webui [PR #454]
@@ -96,9 +95,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add percona extra backup [PR #386]
 - Add test for client initiated backup [PR #383]
 
-# Changed
-
-
+### Changed
 - Updated many localization files [PR #609]
 - Display archived jobs on list backups command [PR #581]
 - Use a configurable VDI timeout when requesting the MSSQL config [PR #571]
@@ -120,17 +117,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update ovirt plugin documentation [PR #384]
 - Improve ovirt plugin
 
-# Deprecated
+### Deprecated
+- Using MySQL as a catalog backend is now deprecated [PR #564]
 
-- Add MySQL/SQLite deprecation notes to software [PR #564]
-- Add MySQL/SQLite deprecation notes to documentation [PR #563]
+### Removed
+- Remove support for creating MySQL / SQLite catalogs [PR#563] [PR #603]
 
-# Removed
+### Security
 
-# Security
-
-- Add SECURITY.md file: [PR #463]
-- Do not accept cram challenge if own hostname is used [PR #536]
+- Do not accept cram challenge if own hostname is used [PR #536] [CVE-2020-4042](https://github.com/bareos/bareos/security/advisories/GHSA-vqpj-2vhj-h752)
+- [Issue #1210]: Heap overflow in director when running a verify job against a malicious filedaemon [CVE-2020-11061](https://github.com/bareos/bareos/security/advisories/GHSA-mm45-cg35-54j4)
 
 
 [Issue #1039]: https://bugs.bareos.org/view.php?id=1039
