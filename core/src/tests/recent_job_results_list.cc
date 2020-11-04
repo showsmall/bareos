@@ -65,7 +65,7 @@ TEST(recent_job_results_list, write_job_results_to_file)
   OSDependentInit();
   RecentJobResultsList::Cleanup();
 
-  const char* fname = Is32BitWordsize() ? "bareos-dir-32bit" : "bareos-dir";
+  const char* fname = Is32BitAligned() ? "bareos-dir-32bit" : "bareos-dir";
 
   char orig_path[]{TEST_ORIGINAL_FILE_DIR};
   ReadStateFile(orig_path, fname, 42001);
