@@ -32,40 +32,10 @@
 #include <iostream>
 #include <fstream>
 
-static inline bool Is32BitWordsize()
+static inline bool Is32BitAligned()
 {
-#if defined HAVE_WIN32 and defined HAVE_MINGW
-  return false;  // wincross always 64Bit
-#else
-  return sizeof(void*) == 4;
-#endif
+  return offsetof(StateFileHeader, last_jobs_addr) == 20;
 };
-
-TEST(recent_job_results_list, check_header_padding_bytes)
-{
-  std::string detected;
-
-  if (Is32BitWordsize()) {
-    detected = "32Bit wordsize";
-    EXPECT_EQ(offsetof(StateFileHeader, version), 16);
-    EXPECT_EQ(offsetof(StateFileHeader, last_jobs_addr), 20);
-    EXPECT_EQ(offsetof(StateFileHeader, end_of_recent_job_results_list), 28);
-    EXPECT_EQ(offsetof(StateFileHeader, reserved), 36);
-  } else {
-    detected = "64Bit wordsize";
-    EXPECT_EQ(offsetof(StateFileHeader, version), 16);
-    EXPECT_EQ(offsetof(StateFileHeader, last_jobs_addr), 24);
-    EXPECT_EQ(offsetof(StateFileHeader, end_of_recent_job_results_list), 32);
-    EXPECT_EQ(offsetof(StateFileHeader, reserved), 40);
-  }
-
-#if HAVE_WIN32
-  detected += ", Windows";
-#endif
-  detected += " detected";
-
-  std::cout << " <<< " << detected << " >>> " << std::endl;
-}
 
 TEST(recent_job_results_list, read_job_results_from_file)
 {
@@ -74,7 +44,7 @@ TEST(recent_job_results_list, read_job_results_from_file)
 
   char orig_path[]{TEST_ORIGINAL_FILE_DIR};
 
-  const char* fname = Is32BitWordsize() ? "bareos-dir-32bit" : "bareos-dir";
+  const char* fname = Is32BitAligned() ? "bareos-dir-32bit" : "bareos-dir";
 
   ReadStateFile(orig_path, fname, 42001);
 
