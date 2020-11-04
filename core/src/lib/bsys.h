@@ -73,4 +73,11 @@ struct StateFileHeader {
   uint64_t reserved[19];
 };
 
+static_assert(offsetof(StateFileHeader, version) == 16);
+static_assert(offsetof(StateFileHeader, last_jobs_addr) == 20 ||
+                      offsetof(StateFileHeader, last_jobs_addr) == 24);
+static_assert(offsetof(StateFileHeader, end_of_recent_job_results_list) == 28 ||
+                      offsetof(StateFileHeader, end_of_recent_job_results_list) == 32);
+static_assert(offsetof(StateFileHeader, reserved) == 36 ||
+                      offsetof(StateFileHeader, reserved) == 40);
 #endif  // BAREOS_LIB_BSYS_H_
