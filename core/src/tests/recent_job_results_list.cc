@@ -126,7 +126,7 @@ TEST(recent_job_results_list, read_job_results_from_file_truncated_jobs)
 
   char orig_path[]{TEST_ORIGINAL_FILE_DIR};
 
-  const char* fname = Is32BitWordsize() ? "bareos-dir-truncated-jobs-32bit"
+  const char* fname = Is32BitAligned() ? "bareos-dir-truncated-jobs-32bit"
                                         : "bareos-dir-truncated-jobs";
 
   ASSERT_TRUE(create_file(orig_path, std::string(fname) + ".42001.state"));
